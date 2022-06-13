@@ -35,3 +35,8 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "associate_public_ip_address" {
+  description = "enabling public ip"
+  type        = bool
+}
