@@ -31,11 +31,9 @@ module "vpc" {
 
 module "ec2_instances" {
   source  = "terraform-aws-modules/ec2-instance/aws"
-  version = "2.12.0"
-
-  name           = "my-ec2-cluster"
-  instance_count = 2
-
+  
+  name           = "mydemosingleinstance"
+  instance_count = 1
   ami                    = "ami-0c5204531f799e0c6"
   instance_type          = "t2.micro"
   vpc_security_group_ids = [module.vpc.default_security_group_id]
