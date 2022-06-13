@@ -4,7 +4,7 @@ resource "aws_instance" "ec2_instance" {
                                                                                   # module "ec2_instance" {
                                                                                     #   source  = "terraform-aws-modules/ec2-instance/aws"
 
-
+  root_block_device = var.root_block_device
   name = var.name 
   instance_count = var.instance_count
   ami                    = var.ami 
