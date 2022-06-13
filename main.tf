@@ -30,7 +30,7 @@ module "vpc" {
 }
 
 module "ec2_instances" {
-  source  = "terraform-aws-modules/ec2-instance/aws"
+  source  = "./modules/aws-ec2-instances"
   
   name           = "mydemosingleinstance"
   instance_count = 1
