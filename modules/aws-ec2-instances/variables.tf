@@ -27,7 +27,7 @@ variable "subnet_id" {
 
 variable "instance_count" {
   description = "Number of instances"
-  type        = integer
+  type        = number
 }
 
 variable "tags" {
