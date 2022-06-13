@@ -1,8 +1,33 @@
 # Input variable definitions
 
-variable "bucket_name" {
-  description = "Name of the s3 bucket. Must be unique."
+variable "name" {
+  description = "Name of the ec2 instance."
   type        = string
+}
+
+variable "ami" {
+  description = "Name of the ami"
+  type        = string
+}
+
+variable "instance_type" {
+  description = "Name of the instance_type"
+  type        = string
+}
+
+variable "vpc_security_group_ids" {
+  description = "list of groupid of vpc security group"
+  type        = list(string)
+}
+
+variable "subnet_id" {
+  description = "Name of the subnet_id"
+  type        = string
+}
+
+variable "instance_count" {
+  description = "Number of instances"
+  type        = integer
 }
 
 variable "tags" {
