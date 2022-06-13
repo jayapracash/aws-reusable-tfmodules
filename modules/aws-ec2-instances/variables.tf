@@ -40,3 +40,11 @@ variable "associate_public_ip_address" {
   description = "enabling public ip"
   type        = bool
 }
+variable "key_name" {
+  description = "testing security group key"
+  type        = string
+}
+variable " root_block_device" {
+  description = "enabling public ip"
+  type        = map
+}
