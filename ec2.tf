@@ -33,9 +33,7 @@ resource "aws_security_group" "project-iac-sg" {
 }
 module "ec2-instance" {
   source = "./modules/ec2-instance"
-  vpc_security_group_ids = [
-    aws_security_group.project-iac-sg.id
-  ]
+ 
   #depends_on = [aws_security_group.project-iac-sg]
 
 }
