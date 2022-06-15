@@ -1,8 +1,25 @@
 # --- ec2-instance/main.tf ---
+module "vpc" {
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "~> 3.0"
+
+  name = "ec2-example-vpc"
+  cidr = "10.99.0.0/18"
+
+  azs              = ["us-west-2a", "us-west-2b"]
+  public_subnets   = ["10.99.0.0/24", "10.99.1.0/24", "10.99.2.0/24"]
+  private_subnets  = ["10.99.3.0/24", "10.99.4.0/24", "10.99.5.0/24"]
+  database_subnets = ["10.99.7.0/24", "10.99.8.0/24", "10.99.9.0/24"]
+
+  tags = {
+    Name = "MysampleInstance"
+  }
+
+}
 resource "aws_security_group" "project-iac-sg" {
   name        = "IAC-Sec-Group"
   description = "MYIAC-Sec-Group"
-  vpc_id      = "vpc-5234832d"
+  vpc_id      = module.vpc.vpc_id
 
   // To Allow SSH Transport
   ingress {
