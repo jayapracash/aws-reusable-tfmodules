@@ -11,3 +11,7 @@ module "ec2-instance" {
   source = "./modules/ec2-instance"
   subnet_id     = "${var.subnet_id}"
 }
+
+variable "vpc_id" {}
+variable "subnet_id" {}
+  
