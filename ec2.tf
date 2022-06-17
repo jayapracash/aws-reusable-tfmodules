@@ -8,4 +8,5 @@ module "aws-vpc-module" {
 
 module "ec2-instance" {
   source = "./modules/ec2-instance"
+  subnet_id     = "${var.subnet_id}"
 }
