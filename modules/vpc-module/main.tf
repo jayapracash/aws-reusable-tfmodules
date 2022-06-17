@@ -56,7 +56,7 @@ subnet_id           = aws_subnet.public-subnet-1.id
 route_table_id      = aws_route_table.public-route-table.id
 }
 
-variable "vpc_id" {}
+#variable "vpc_id" {}
 
 output "vpc_id" {
   value = "${aws_vpc.vpc.id}"
