@@ -32,6 +32,11 @@ tags      = {
 Name    = "public-subnet-1"
 }
 }
+
+data "aws_subnet" "selected" {
+  id = aws_subnet.public-subnet-1.id
+}
+
 # Create Route Table and Add Public Route
 # terraform aws create route table
 resource "aws_route_table" "public-route-table" {
