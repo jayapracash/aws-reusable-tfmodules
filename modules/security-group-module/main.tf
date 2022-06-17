@@ -32,7 +32,7 @@ resource "aws_security_group" "project-iac-sg" {
   }
 }
 
-data "aws-security-group" "selected" {
+data "aws_security_group" "selected" {
   id = aws_security_group.project-iac-sg.id
 }
 
