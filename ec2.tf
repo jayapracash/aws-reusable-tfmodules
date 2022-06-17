@@ -4,7 +4,7 @@ module "aws-vpc-module" {
 }
   module "aws-security-group" {
   source = "./modules/security-group-module"
-    vpc_id = "${var.vpc_id}"
+  vpc_id = "${var.vpc_id}"
 }
 
 module "ec2-instance" {
