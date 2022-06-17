@@ -17,4 +17,4 @@ resource "aws_instance" "app_server" {
     create_before_destroy = true
   }
 }
-variable "subnet_id" {}
+
