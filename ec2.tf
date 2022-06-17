@@ -10,6 +10,7 @@ module "aws-vpc-module" {
 module "ec2-instance" {
   source = "./modules/ec2-instance"
   subnet_id     = "${module.aws-vpc-module.subnet_id}"
+  security_groups             = ["${module.aws-security-group.sg_id}"]
 }
 
 
