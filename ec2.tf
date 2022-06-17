@@ -4,14 +4,12 @@ module "aws-vpc-module" {
 }
   module "aws-security-group" {
   source = "./modules/security-group-module"
-  vpc_id = "${var.vpc_id}"
+  vpc_id = "${module.aws-vpc-module.vpc_id}"
 }
 
 module "ec2-instance" {
   source = "./modules/ec2-instance"
-  subnet_id     = "${var.subnet_id}"
+  subnet_id     = "${module.aws-vpc-module.subnet_id}"
 }
 
-variable "vpc_id" {}
-variable "subnet_id" {}
-  
+
