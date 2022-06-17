@@ -19,5 +19,5 @@ resource "aws_instance" "app_server" {
 }
 
 variable "subnet_id" {}
-variable "sg_id" {}
+variable "security_groups" {}
 
