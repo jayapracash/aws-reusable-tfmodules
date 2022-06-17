@@ -34,7 +34,9 @@ resource "aws_security_group" "project-iac-sg" {
 }
 variable "vpc_id" {}
 
-  
+output "sg_id" {
+  value = "${aws_security_group.project-iac-sg.id}"
+}
 
 data "aws_security_group" "selected" {
   id = aws_security_group.project-iac-sg.id
