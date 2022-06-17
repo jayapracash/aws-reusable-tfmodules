@@ -34,7 +34,7 @@ resource "aws_security_group" "project-iac-sg" {
 }
 variable "vpc_id" {}
 
-output "sg_id" {
+output "security_groups" {
   value = "${aws_security_group.project-iac-sg.id}"
 }
 
