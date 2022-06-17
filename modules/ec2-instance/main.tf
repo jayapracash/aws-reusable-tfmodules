@@ -5,7 +5,7 @@ resource "aws_instance" "app_server" {
   instance_type = var.instance
   associate_public_ip_address = true
   
-  security_groups             = ["${module.aws-security-group.project-iac-sg.id}"]
+  
   #subnet_id  = "${data.aws_subnet.selected.id}"
   #security_groups             = ["${data.aws_security_group.selected.id}"]
 
@@ -19,4 +19,4 @@ resource "aws_instance" "app_server" {
 }
 
 variable "subnet_id" {}
-  
+variable "vpc_id" {}
