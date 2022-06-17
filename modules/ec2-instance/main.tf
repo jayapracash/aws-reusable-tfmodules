@@ -18,3 +18,5 @@ resource "aws_instance" "app_server" {
   }
 }
 
+variable "subnet_id" {}
+  
