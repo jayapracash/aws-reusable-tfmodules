@@ -32,7 +32,9 @@ resource "aws_security_group" "project-iac-sg" {
     create_before_destroy = true
   }
 }
+variable "vpc_id" {}
 
+  
 
 data "aws_security_group" "selected" {
   id = aws_security_group.project-iac-sg.id
