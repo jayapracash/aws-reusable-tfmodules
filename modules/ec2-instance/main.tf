@@ -4,6 +4,7 @@ resource "aws_instance" "app_server" {
   ami           = var.ami_id
   instance_type = var.instance
   associate_public_ip_address = true
+  subnet_id  = "${data.aws_subnet.selected.public-subnet-1.id}"
 
   tags = {
     Name = "MysampleInstance"
