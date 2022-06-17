@@ -31,3 +31,9 @@ resource "aws_security_group" "project-iac-sg" {
     create_before_destroy = true
   }
 }
+
+data "aws-security-group" "selected" {
+  id = aws_security_group.project-iac-sg.id
+}
+
+  
