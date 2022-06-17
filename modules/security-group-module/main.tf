@@ -1,7 +1,7 @@
 resource "aws_security_group" "project-iac-sg" {
   name        = "IAC-Sec-Group"
   description = "MYIAC-Sec-Group"
-  //vpc_id      = module.aws_vpc.vpc.id 
+  vpc_id      = module.aws_vpc.vpc.id 
     //vpc_id    = aws_vpc.vpc.id
 
   // To Allow SSH Transport
