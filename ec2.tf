@@ -1,4 +1,8 @@
 #--- root/ ec2.tf ---
+
+provider "aws" {
+  region = "us-east-1"
+}
 module "aws-vpc-module" {
   source = "./modules/vpc-module"
 }
