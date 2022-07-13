@@ -1,0 +1,28 @@
+---
+  - name: Linux Test Playbook
+    hosts: localhost
+    vars:
+      directory: /tmp
+    tasks:
+      - name: create private key
+        openssl_privatekey:
+          path: /tmp/mysample.key
+          size: 2048 
+      
+      - name: create certificate signing request file
+        openssl_csr:
+          path: /tmp/mysample.csr
+          privatekey_path: /tmp/mysample.key
+
+      - name: create self signed certificate files 
+        openssl_certificate:
+          provider: selfsigned
+          path: /tmp/mysample.crt
+          privatekey_path: /tmp/mysample.key
+          csr_path: /tmp/mysample.csr
+
+      - name: printing files generated
+        command: "ls {{directory}}"
+        register: dir_out
+      - debug: var={{item}}
+        with_items: dir_out.stdout_lines
