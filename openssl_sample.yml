@@ -14,7 +14,10 @@
           path: /tmp/mysample.csr
           privatekey_path: /tmp/mysample.key
           country_name: IN
-          organization_name: "charan Company"
+          state_or_province_name: Haryana
+          locality_name: Chandigarh
+          organization_name: "mastek Company"
+          organizational_unit_name: "R&D"
           common_name: "mysample"
           subject_alt_name: "DNS:{{ ansible_host }},DNS:{{ ansible_fqdn }}"
 
