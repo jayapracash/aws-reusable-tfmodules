@@ -13,6 +13,10 @@
         openssl_csr:
           path: /tmp/mysample.csr
           privatekey_path: /tmp/mysample.key
+          country_name: IN
+          organization_name: "charan Company"
+          common_name: "mysample"
+          subject_alt_name: "DNS:{{ ansible_host }},DNS:{{ ansible_fqdn }}"
 
       - name: create self signed certificate files 
         openssl_certificate:
@@ -26,3 +30,9 @@
         register: dir_out
       - debug: var={{item}}
         with_items: dir_out.stdout_lines
+      
+      - name: validating cert files 
+        command: "openssl req -noout -text -in {{directory}}/mysample.csr"
+        register: cmd_out
+      - debug: var={{item}}
+        with_items: cmd_out.stdout_lines
