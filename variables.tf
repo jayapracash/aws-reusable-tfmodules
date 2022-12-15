@@ -27,7 +27,7 @@ variable "vpc_private_subnets" {
 variable "private_subnet_names" {
   description = "Explicit values to use in the Name tag on private subnets. If empty, Name tags are generated."
   type        = list(string)
-  default     = []
+  default     = ["BB_PRIVATE", "BB_DB"]
 }
 
 variable "vpc_public_subnets" {
