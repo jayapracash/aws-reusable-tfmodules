@@ -24,7 +24,7 @@ module "vpc" {
 
   tags = var.vpc_tags
 }
-
+/*
 module "ec2_instances" {
   source  = "./modules/aws-ec2-instances"
   
@@ -51,3 +51,4 @@ module "website_s3_bucket" {
     Environment = "dev"
   }
 }
+*/
