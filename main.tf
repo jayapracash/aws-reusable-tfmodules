@@ -9,7 +9,7 @@ module "vpc" {
   azs             = var.vpc_azs
   private_subnets = var.vpc_private_subnets
   public_subnets  = var.vpc_public_subnets
-  private_subnet_names = ["BB_PRIVATE", "BB_DB"]
+  private_subnet_names = var.private_subnet_names
   enable_nat_gateway = var.vpc_enable_nat_gateway
 
   tags = var.vpc_tags
