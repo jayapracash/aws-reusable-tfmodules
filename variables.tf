@@ -24,6 +24,12 @@ variable "vpc_private_subnets" {
   default     = ["10.0.5.0/24", "10.0.6.0/24"]
 }
 
+variable "private_subnet_names" {
+  description = "Explicit values to use in the Name tag on private subnets. If empty, Name tags are generated."
+  type        = list(string)
+  default     = []
+}
+
 variable "vpc_public_subnets" {
   description = "Public subnets for VPC"
   type        = list(string)
